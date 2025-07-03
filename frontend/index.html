@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>To-Do</title></head>
+<body>
+  <h1>To-Do List</h1>
+  <ul id="list"></ul>
+  <script>
+    fetch("http://api:5000/todos")
+      .then(r=>r.json())
+      .then(data=>{
+        data.forEach(t=>{
+          let li=document.createElement('li');
+          li.innerText = t.task;
+          document.getElementById('list').append(li);
+        });
+      });
+  </script>
+</body>
+</html>
