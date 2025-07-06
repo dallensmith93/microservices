@@ -13,11 +13,17 @@ spec:
         app: todo
     spec:
       containers:
-      - name: api
-        image: diomaster2011/hello-api:latest
-        ports:
-        - containerPort: 5000
-      - name: frontend
-        image: diomaster2011/hello-frontend:latest
-        ports:
-        - containerPort: 80
+        - name: api
+          image: diomaster2011/hello-api:latest
+          resources:
+            requests:
+              cpu: "100m"
+          ports:
+            - containerPort: 5000
+        - name: frontend
+          image: diomaster2011/hello-frontend:latest
+          resources:
+            requests:
+              cpu: "100m"
+          ports:
+            - containerPort: 80
