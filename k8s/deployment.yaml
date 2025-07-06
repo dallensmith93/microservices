@@ -14,12 +14,10 @@ spec:
     spec:
       containers:
       - name: api
-        image: hello-api:latest
-        imagePullPolicy: Never         # ← add this
+        image: diomaster2011/hello-api:latest
         ports:
         - containerPort: 5000
       - name: frontend
-        image: hello-frontend:latest
-        imagePullPolicy: Never         # ← add this
+        image: diomaster2011/hello-frontend:latest
         ports:
         - containerPort: 80
